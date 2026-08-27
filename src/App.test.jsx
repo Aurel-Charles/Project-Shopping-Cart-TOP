@@ -1,6 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import Navbar from './components/NavBar/Navbar';
+import Home from './pages/Home';
+
 
 describe('something truthy and falsy', () => {
   it('true to be true', () => {
@@ -16,11 +18,16 @@ describe('something truthy and falsy', () => {
 
 
 describe('App', () => {
-  it('renders headline', () => {
-    render(<App title="React" />);
-
+  it('renders Navbar', () => {
+    render(<Navbar/>);
+    const nav = screen.getByRole('navigation')
+    expect(nav).toBeInTheDocument()
     screen.debug();
-
-    // check if App components renders headline
+  });
+  it('renders Home', () => {
+    render(<Home/>);
+    const home = screen.getByText(`Let's do shoppping`)
+    expect(home).toBeInTheDocument()
+    screen.debug();
   });
 });
