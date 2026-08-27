@@ -1,13 +1,12 @@
-import { Link } from "react-router";
-import Button from "../Button/Button";
+import { NavLink } from "react-router";
 
 export default function Navbar() {
     return (
         <nav>
             <h1>Project Shopping Cart</h1>
-            <Link to="/"> <Button label={"Home"}/> </Link>
-            <Link to="/shop"> <Button label={"Shop"}/> </Link>
-            <Link to="/cart"> <Button label={"Cart"}/> </Link>
+            <NavLink to="/"> Home </NavLink>
+            <NavLink to="/shop"> Shop </NavLink>
+            <NavLink to="/cart"> Cart </NavLink>
         </nav>
     )
 }
