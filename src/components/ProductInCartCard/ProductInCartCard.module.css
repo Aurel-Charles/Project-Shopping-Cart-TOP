@@ -1,0 +1,59 @@
+
+.cardContainer {
+    --item-heigh: 8rem;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr ;
+    gap: 1rem;
+    height: var(--item-heigh);
+    justify-content: center;
+    align-items: center;
+    min-width: 30vw;
+    max-width: 50vw;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.cardContainer > p {
+    font-size: 1.2rem;
+}
+
+.cardContainer:hover{
+    background-color: var(--bg-primary);
+}
+
+.cardContainer > img {
+    height: calc(var(--item-heigh) - 2rem);
+    object-fit: contain;
+
+    align-self: stretch;
+    max-height: calc(var(--item-heigh) - 2rem);
+}
+
+
+.quantityCta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.quantityCta > *{
+    width:  2rem;
+    height: 2rem;
+    text-align: center;
+}
+
+.quantityCta > p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.productCta{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.3rem;
+}

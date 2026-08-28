@@ -1,17 +1,23 @@
-import { useState } from "react"
 import { useOutletContext } from "react-router"
-import useProduct from "../hooks/useProduct"
+import ProductCard from "../components/ProductCard/ProductCard"
+import style from './Shop.module.css' 
 
 export default function Shop() {
-    const { cart, addItem, removeItem } = useOutletContext()
+    const { cart, addItem, removeItem, data, loading, error } = useOutletContext()
 
-    const {data, loading, error} = useProduct()
-    console.log(data);
-    
-    
     return(
-        <div className="shop-page">
+        <div className={style.shopPage}>
+
             <h1>Shop page</h1>
+
+            {loading && <p>...loading</p> }
+            {error && <p> {error} </p> }
+            {data && <div className={style.productsContainer}>
+                {data.map((product) => (
+                    <ProductCard key={product.id} product={product} addItem={addItem} />
+                ))}
+            </div> }
+
         </div>
     )
 }

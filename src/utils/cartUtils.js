@@ -2,22 +2,19 @@ export function addItemUtil(id, quantity, cart) {
     const sameItemInCart = cart.find( (item)=> item.id === id )
     let itemToCart = {id, quantity}
     if (sameItemInCart) {
-        itemToCart = {id , quantity: quantity + sameItemInCart.quantity }
-        const otherItems = cart.filter( (item)=> item.id !== id )
-        return [...otherItems, itemToCart]
+        return cart.map((item) => 
+            item.id === id 
+                ? { ...item, quantity: item.quantity + quantity }
+                : item
+        )
     }
     return [...cart, itemToCart]
   }
 
-export function removeItemUtil(id, cart, all=false) {
-    let sameItemInCart = cart.find( (item)=> item.id === id )
-    if (!sameItemInCart) {
-        return
-    }
-    const otherItems = cart.filter( (item)=> item.id !== id )
-    if (all) {
-        return [...otherItems]
-    }
-    sameItemInCart = {id , quantity: sameItemInCart.quantity - 1 }
-    return sameItemInCart.quantity === 0 ?  [...otherItems] : [...otherItems, sameItemInCart]
+  export function removeItemUtil(id, cart, all=false) {
+    if (all) return cart.filter((item) => item.id !== id)
+    
+    return cart
+        .map((item) => item.id === id ? { ...item, quantity: item.quantity - 1 } : item)
+        .filter((item) => item.quantity > 0)
 }

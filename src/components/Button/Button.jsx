@@ -1,5 +1,7 @@
-export default function Button({label}) {
+import style from "./Button.module.css"
+
+export default function Button({label, onClick, disabled=false , variant} ) {
     return (
-        <button>{label}</button>
+        <button className={`${style.button} ${style[variant]}`}  onClick={onClick} disabled={disabled}>{label}</button>
     )
 }

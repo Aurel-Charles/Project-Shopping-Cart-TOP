@@ -1,0 +1,12 @@
+.shopPage{
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 2rem;
+}
+
+.productsContainer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+

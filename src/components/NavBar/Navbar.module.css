@@ -1,0 +1,51 @@
+.navbar{
+    background-color: var(--bg-secondary);
+    padding: 3rem;
+    height: var(--nav-size);
+}
+
+.navbar > h1{
+    color: orange;
+    font-size: 3rem;
+}
+
+.navLink{
+    display: flex;
+    font-size: 2rem;
+    gap: 2rem;
+}
+
+.navLink > a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+.cartIcon {
+    position: relative;
+    margin-left: auto;
+}
+.cartIcon > a {
+    background-color: var(--bg-btn);
+    color: var(--text-btn);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cartIcon > div {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    background-color: var(--danger);
+    color: var(--text-btn);
+    border-radius: 50%;
+    width: 1.4rem;
+    height: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.80rem;
+    font-weight: bold;
+}

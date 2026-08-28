@@ -1,0 +1,36 @@
+.productCard{
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    border: solid black 1px;
+    padding: 1rem;
+}
+
+.priceProduct{
+    font-size: 2rem;
+}
+
+.quantityCta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+.quantityCta > *{
+    width:  2rem;
+    height: 2rem;
+    text-align: center;
+}
+
+.quantityCta > p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titleProduct{
+    font-size: 1.4rem;
+    text-shadow: 0 0 1px black;
+    color: var(--accent-primary);
+    text-transform: uppercase;
+}

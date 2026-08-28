@@ -1,0 +1,36 @@
+.cartPage{
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: calc(100vh - var(--nav-size) ) ;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cart, .subtotalCart{
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    padding: 2rem;
+    border-radius: 15px;
+    width: 50%;
+}
+
+.subtotalCart{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    font-size: 1.2rem;
+    gap: 1rem;
+}
+
+.totalText{
+    place-self: end;
+    align-self: center;
+}
+
+.totalPrice{
+    align-self: center;
+    font-style: bold;
+    font-size: larger;
+}
