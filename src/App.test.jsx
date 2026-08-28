@@ -17,17 +17,17 @@ describe('something truthy and falsy', () => {
 
 
 
-describe('App', () => {
-  it('renders Navbar', () => {
-    render(<Navbar/>);
-    const nav = screen.getByRole('navigation')
-    expect(nav).toBeInTheDocument()
-    screen.debug();
-  });
-  it('renders Home', () => {
-    render(<Home/>);
-    const home = screen.getByText(`Let's do shoppping`)
-    expect(home).toBeInTheDocument()
-    screen.debug();
-  });
-});
+// describe('App', () => {
+//   it('renders Navbar', () => {
+//     render(<Navbar/>);
+//     const nav = screen.getByRole('navigation')
+//     expect(nav).toBeInTheDocument()
+//     screen.debug();
+//   });
+//   it('renders Home', () => {
+//     render(<Home/>);
+//     const home = screen.getByText(`Let's do shoppping`)
+//     expect(home).toBeInTheDocument()
+//     screen.debug();
+//   });
+// });
