@@ -8,5 +8,25 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+    align-items: stretch;
 }
 
+
+.shopPage {
+    background: linear-gradient(
+    135deg, 
+    var(--bg-secondary) 0%,
+    var(--bg-secondary) 10%,
+    var(--accent-primary) 50%,
+    var(--bg-secondary) 90%,
+    var(--bg-secondary) 100%
+);
+    background-size: 300% 300%;
+    animation: colorShift 30s ease-in-out infinite;
+}
+
+@keyframes colorShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

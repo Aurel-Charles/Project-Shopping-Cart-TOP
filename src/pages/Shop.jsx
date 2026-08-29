@@ -8,7 +8,7 @@ export default function Shop() {
     return(
         <div className={style.shopPage}>
 
-            <h1>Shop page</h1>
+            <h1> The Shop</h1>
 
             {loading && <p>...loading</p> }
             {error && <p> {error} </p> }

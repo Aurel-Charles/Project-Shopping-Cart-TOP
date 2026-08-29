@@ -1,0 +1,77 @@
+.toastContainer{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 1rem;
+    color: var(--text-primary);
+}
+
+.toast{
+    background-color: var(--bg-primary);
+    width: 20vw;
+    border: solid var(--border) 1px;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    box-shadow: var(--shadow);
+    animation: slideInOut 3s ease-in-out forwards;
+}
+
+.cartIcon {
+    animation: slideInOut 3s ease-out forwards;
+    justify-self: end;
+    margin: 1rem;
+    background-color: var(--bg-primary);
+    border: solid var(--border) 1px;
+    box-shadow: var(--shadow);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    stroke: var(--text-primary);
+}
+
+.cartIcon:hover{
+    background-color: var(--bg-secondary);
+}
+
+.toastDetails{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1rem;
+    text-align: end;
+    color: var(--text-primary);
+}
+
+.toastDetails > p{
+    font-size: larger;
+    font-weight: bold;
+}
+
+.toastDetails > svg {
+    flex-shrink: 0;
+}
+
+@keyframes slideInOut {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    10% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    90% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+

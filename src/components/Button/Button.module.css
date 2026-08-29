@@ -36,5 +36,11 @@
     place-self: center;
 }
 .add:hover { background-color: var(--success); }
-.remove { background-color: var(--bg-btn-danger); }
+.remove {
+    background-color: var(--bg-btn-danger);
+    color: var(--text-btn);
+    min-width: 2rem;
+    min-height: 2rem;
+    padding: 0.4rem;
+}
 .remove:hover { background-color: var(--bg-btn-danger-hover); }

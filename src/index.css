@@ -53,7 +53,13 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
-
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('./assets/fonts/BebasNeue-Regular.woff2') format('woff2'),
+       url('./assets/fonts/BebasNeue-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
   --bg-primary: #ffffff;
@@ -70,8 +76,9 @@ h1, h2, h3, h4, h5, h6 {
   --bg-btn-danger: #ef4444;
   --bg-btn-danger-hover: #dc2626;
   --text-btn: #ffffff;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
-  --nav-size: 12rem
+  --nav-size: 12rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -80,15 +87,20 @@ h1, h2, h3, h4, h5, h6 {
     --bg-secondary: #27272a;
     --text-primary: #f9fafb;
     --text-secondary: #9ca3af;
-    --accent-primary: #60a5fa;
-    --accent-secondary: #3b82f6;
+    --accent-primary: #8ce9ef;
+    --accent-secondary: #459ca9;
     --danger: #f87171;
-    --success: #4ade80;
-    --border: #3f3f46;
-    --bg-btn: #60a5fa;
+    --success: #87ca9f;
+    --border: #b0e0ec;
+    --bg-btn: #ceb872;
     --bg-btn-hover: #3b82f6;
     --bg-btn-danger: #f87171;
     --bg-btn-danger-hover: #ef4444;
     --text-btn: #1a1a1a;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
   }
+}
+
+h1,h2,h3, a, button {
+  font-family: 'BebasNeue', sans-serif;
 }

@@ -18,18 +18,30 @@
 .cardContainer > p {
     font-size: 1.2rem;
 }
+.cardContainer > p:last-child {
+    justify-self: center;
+}
 
 .cardContainer:hover{
     background-color: var(--bg-primary);
 }
 
 .cardContainer > img {
+    background-color: antiquewhite;
+    border-radius: 15px;
     height: calc(var(--item-heigh) - 2rem);
     object-fit: contain;
-
     align-self: stretch;
     max-height: calc(var(--item-heigh) - 2rem);
 }
+
+.productCard {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
 
 
 .quantityCta{
@@ -56,4 +68,6 @@
     flex-direction: row;
     align-items: center;
     gap: 0.3rem;
+    font-family: 'BebasNeue', sans-serif;
+    font-size: larger;
 }

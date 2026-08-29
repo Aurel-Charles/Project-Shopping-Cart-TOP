@@ -10,7 +10,9 @@ export default function Navbar({cart}) {
             <div className={style.navLink}>
                 <NavLink to="/"> Home </NavLink>
                 <NavLink to="/shop"> Shop </NavLink>
+                <NavLink to="/cart"> Cart </NavLink>
                 <div className={style.cartIcon}>
+
                     <NavLink to="/cart"> <ShoppingCart size={32} /> </NavLink>
                     
                     {totalItems === 0 ? null : <div> {totalItems} </div>}

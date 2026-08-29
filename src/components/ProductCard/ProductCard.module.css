@@ -1,8 +1,14 @@
 .productCard{
     background-color: var(--bg-secondary);
     color: var(--text-secondary);
-    border: solid black 1px;
+    border: solid var(--border) 1px;
     padding: 1rem;
+    border-radius: 15px;
+}
+.productCard > img{
+    background-color: antiquewhite;
+    border-radius: 15px;
+    margin-bottom: 1rem;
 }
 
 .priceProduct{
@@ -33,4 +39,38 @@
     text-shadow: 0 0 1px black;
     color: var(--accent-primary);
     text-transform: uppercase;
+}
+
+.productCard {
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    border: solid var(--border) 1px;
+    padding: 1rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.descriptionProduct {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+.productCta {
+    margin-top: auto;
+    font-family: 'BebasNeue', sans-serif;
+    font-size: larger;
+}
+
+.productCard > img {
+    background-color: antiquewhite;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
 }
