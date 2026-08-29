@@ -3,7 +3,7 @@ import ProductCard from "../components/ProductCard/ProductCard"
 import style from './Shop.module.css' 
 
 export default function Shop() {
-    const { cart, addItem, removeItem, data, loading, error } = useOutletContext()
+    const { addItem, data, loading, error } = useOutletContext()
 
     return(
         <div className={style.shopPage}>

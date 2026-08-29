@@ -9,7 +9,7 @@ export default function ProductInCartCard({product,quantity, addItem,removeItem}
     return (
         <div className={style.cardContainer} >
             <img src={product.images[0]} alt={product.title} />
-            <p> {product.title} </p>
+            <p className={style.productTitle}> {product.title} </p>
             <div className={style.productCta}>
                 <div className={style.quantityCta}>
                     <Button variant={"minus"} label={"-"} onClick={() => removeItem(product.id)} />
