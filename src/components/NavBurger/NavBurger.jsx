@@ -18,10 +18,10 @@ export default function NavBurger({cart, className}) {
         <Button variant={"burger"} label={<Menu  />} onClick={handleOpen}/> 
         {isOpen ? 
             <nav className={style.burgerNav}>
-                <NavLink to="/"> Home </NavLink>
-                <NavLink to="/shop"> Shop </NavLink>
+                <NavLink onClick={handleOpen} to="/"> Home </NavLink>
+                <NavLink onClick={handleOpen} to="/shop"> Shop </NavLink>
                 <div className={style.cartMenuBurger}>
-                    <NavLink to="/cart"> Cart </NavLink>
+                    <NavLink onClick={handleOpen} to="/cart"> Cart </NavLink>
                     {totalItems === 0 ? null : <div> {totalItems} </div>}
                 </div>
             </nav> 
