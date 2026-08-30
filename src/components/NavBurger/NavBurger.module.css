@@ -1,0 +1,46 @@
+.burgerNav {
+    position: absolute;
+    top: var(--nav-size);
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--bg-secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 0 0 15px 15px;
+    box-shadow: var(--shadow);
+    z-index: 10;
+}
+
+.burgerNav  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.cartMenuBurger{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.cartMenuBurger > div {
+    position: absolute;
+    top: -0.5rem;
+    right: calc(50vw - 5.5rem) ;
+    background-color: var(--danger);
+    color: var(--text-btn);
+    border-radius: 50%;
+    width: 1.4rem;
+    height: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.80rem;
+    font-weight: bold;
+}
+
+

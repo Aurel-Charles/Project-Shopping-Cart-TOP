@@ -9,6 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .button:hover {
@@ -28,19 +29,48 @@
     background-color: var(--bg-btn-danger-hover);
 }
 
-.plus, .minus {
+.plus, .minus, .remove {
+    padding: 0; 
+    width: 2rem;
+    height: 2rem;
+    min-width: 2rem;
+    min-height: 2rem;
     border-radius: 50%;
 }
 
-.add{
-    place-self: center;
+
+
+.plus, .minus {
+    border-radius: 50%;
 }
+.plus:hover, .minus:hover {
+    background-color: var(--success);
+}
+
+
+
+
 .add:hover { background-color: var(--success); }
 .remove {
-    background-color: var(--bg-btn-danger);
-    color: var(--text-btn);
+    background-color: var(--bg-primary);
+    color: var(--icon-color);
     min-width: 2rem;
     min-height: 2rem;
     padding: 0.4rem;
 }
-.remove:hover { background-color: var(--bg-btn-danger-hover); }
+
+.remove:hover {
+    background-color: var(--bg-btn-danger);
+    color: var(--icon-color-hover);
+}
+
+
+.burger {
+    background-color: transparent;
+    color: var(--text-primary);
+
+}
+
+.burger svg {
+    stroke: var(--text-primary) !important;
+}

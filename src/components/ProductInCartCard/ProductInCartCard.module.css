@@ -1,57 +1,45 @@
+.cartHeader > th {
+    text-align: center;
+}
 
-.cardContainer {
-    --item-heigh: 8rem;
+.cartHeader > th:first-child {
+    text-align: left;
+}
 
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr 1fr ;
-    gap: 1rem;
-    height: var(--item-heigh);
-    justify-content: center;
-    align-items: center;
-    min-width: 30vw;
-    max-width: 50vw;
-    margin: 1rem;
+.cardRow {
+    border-bottom: solid var(--border) 1px;
+}
+
+.cardRow > td {
     padding: 1rem;
-    border-radius: 15px;
+    vertical-align: middle;
+    text-align: center;
 }
 
-.cardContainer > p {
-    font-size: 1.2rem;
-}
-.cardContainer > p:last-child {
-    justify-self: center;
-}
-
-.cardContainer:hover{
-    background-color: var(--bg-primary);
-}
-
-.cardContainer > img {
-    background-color: antiquewhite;
-    border-radius: 15px;
-    height: calc(var(--item-heigh) - 2rem);
-    object-fit: contain;
-    align-self: stretch;
-    max-height: calc(var(--item-heigh) - 2rem);
-}
-
-.productCard {
+.cardRow > td:first-child {
     display: flex;
-    flex-direction: column;
-    height: 100%;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
 }
 
+.cardRow > td:first-child img {
+    height: 6rem;
+    width: 6rem;
+    object-fit: contain;
+    background-color: var(--img-bg);
+    border-radius: 8px;
+}
 
-
-
-.quantityCta{
+.quantityCta {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    gap: 0.5rem;
 }
-.quantityCta > *{
-    width:  2rem;
+
+.quantityCta > * {
+    width: 2rem;
     height: 2rem;
     text-align: center;
 }
@@ -61,13 +49,4 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.productCta{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.3rem;
-    font-family: 'BebasNeue', sans-serif;
-    font-size: larger;
 }

@@ -6,6 +6,14 @@ import useProduct from "./hooks/useProduct"
 import Toast from "./components/Toast/Toast"
 
 function App() {
+  const [theme, setTheme] = useState('light')
+
+  function toggleTheme() {
+      const newTheme = theme === 'light' ? 'dark' : 'light'
+      setTheme(newTheme)
+      document.documentElement.classList.toggle('dark')
+  }
+
   const [cart, setCart] = useState([])
   const [toasts, setToasts] = useState([])
 
@@ -32,7 +40,7 @@ function App() {
   
   return (
     <>
-    <Navbar cart={cart} />
+    <Navbar cart={cart} toggleTheme={toggleTheme} theme={theme} />
     <Toast toasts={toasts}/>
     <Outlet context={{cart, addItem , removeItem , data, loading, error}} />
     </>

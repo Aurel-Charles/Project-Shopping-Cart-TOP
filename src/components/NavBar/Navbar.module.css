@@ -6,13 +6,19 @@
     padding: 0 5rem;
 }
 
-.navbar > h1{
-    color: orange;
+.navbar > h1 {
+    color: var(--accent-primary);
     font-size: 3rem;
+    line-height: 1;
+    /* BebasNeue: ascent .9 / descent .3 / capHeight .7 em. The descender space
+       is never used by an all-caps face, so the glyphs render (.9-.3-.7)/2 =
+       .05em above the box center. Nudged back down without affecting layout. */
+    transform: translateY(0.05em);
 }
 
 .navLink{
     display: flex;
+    align-items: center;
     font-size: 2rem;
     gap: 2rem;
     margin-left: auto;
@@ -23,7 +29,9 @@
     text-transform: uppercase;
     color: var(--text-secondary);
 }
-
+.cartIcon > a > svg {
+    stroke: var(--text-btn);
+}
 .cartIcon {
     position: relative;
 }
@@ -53,3 +61,65 @@
 }
 
 
+.themeToggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.toggleIcon {
+    transition: transform 0.3s ease;
+}
+
+.toggleIcon:hover {
+    transform: scale(1.2);
+}
+
+.sunIcon {
+    animation: spinIn 0.4s ease;
+    color: var(--accent-primary);
+}
+
+.moonIcon {
+    animation: spinIn 0.4s ease;
+    color: var(--accent-primary);
+}
+
+@keyframes spinIn {
+    from {
+        transform: rotate(-90deg) scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+
+.burgerMenu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 1.5rem;
+    }
+
+    .navbar > h1 {
+        font-size: 2rem;
+    }
+
+    .burgerMenu {
+        display: block;
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+    
+    .navLink {
+        display: none;
+    }
+    
+
+}

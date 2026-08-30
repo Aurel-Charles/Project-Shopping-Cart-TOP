@@ -1,0 +1,23 @@
+.caroussel{
+    position: relative;
+    background-color: var(--img-bg);
+}
+
+.chevronLeft, .chevronRight {
+    display: flex;
+    background-color: var(--bg-secondary);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: solid 1px var(--border);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.chevronLeft{
+    left: 1rem;
+}
+.chevronRight{
+    right: 1rem;
+}

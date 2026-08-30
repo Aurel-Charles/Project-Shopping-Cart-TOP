@@ -4,6 +4,13 @@
     right: 0;
     margin: 1rem;
     color: var(--text-primary);
+    display: inline-flex;
+    flex-direction: column;
+    align-self: flex-end;
+}
+.toastContainer > a {
+    display: inline-flex;
+    align-self: flex-end;
 }
 
 .toast{
@@ -23,6 +30,7 @@
 .cartIcon {
     animation: slideInOut 3s ease-out forwards;
     justify-self: end;
+    align-self: flex-end;
     margin: 1rem;
     background-color: var(--bg-primary);
     border: solid var(--border) 1px;
@@ -75,3 +83,18 @@
     }
 }
 
+@media (max-width: 768px) {
+    .toast {
+        width: 80vw;
+        margin: 0.5rem;
+        padding: 0.75rem;
+    }
+
+    .toastContainer {
+        margin: 0.5rem;
+    }
+
+    .cartIcon {
+        padding: 0.75rem;
+    }
+}

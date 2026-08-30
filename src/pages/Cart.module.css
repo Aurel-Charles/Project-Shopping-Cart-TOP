@@ -1,59 +1,87 @@
-.cartPage{
-    background-color: var(--bg-primary);
+.cartPage {
     color: var(--text-primary);
-    min-height: calc(100vh - var(--nav-size) ) ;
+    min-height: calc(100vh - var(--nav-size));
     display: flex;
     flex-direction: column;
     padding: 2rem;
     align-items: center;
     gap: 1rem;
+    background: linear-gradient(
+        135deg, 
+        var(--bg-secondary) 0%,
+        var(--bg-secondary) 10%,
+        color-mix(in oklab, var(--accent-primary) 18%, var(--bg-secondary)) 50%,
+        var(--bg-secondary) 90%,
+        var(--bg-secondary) 100%
+    );
+    background-size: 300% 300%;
+    animation: colorShift 20s ease-in-out infinite;
 }
 
+.cartLayout {
+    display: flex;
+    gap: 2rem;
+    width: 80%;
+    align-items: flex-start;
+}
 
-.cart, .subtotalCart{
+.delivery{
+    display: flex;
+    gap: 1rem;
+    color: var(--success);
+    border: solid 2px var(--success);
+    padding: 0.4rem;
+    border-radius: 15px;
     background-color: var(--bg-secondary);
-    color: var(--text-secondary);
+}
+
+.cart {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
     padding: 2rem;
     border-radius: 15px;
-    width: 50%;
+    flex: 1;
+    border-collapse: collapse;
 }
 
-.subtotalCart{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
-    font-size: 1.2rem;
-    gap: 1rem;
+.subtotalCart {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    padding: 2rem;
+    border-radius: 15px;
+    width: 25%;
+    border-collapse: collapse;
+    position: sticky;
+    top: 2rem;
 }
 
-.totalText{
-    place-self: end;
-    align-self: center;
+.subtotalCart td {
+    padding: 0.5rem 1rem;
+    vertical-align: middle;
 }
 
-.totalPrice{
-    align-self: center;
-    font-style: bold;
+.subtotalCart tr:last-child td {
+    border-top: solid var(--border) 2px;
+    padding-top: 1rem;
+}
+
+.subtotalCart tr:last-child td button {
+    width: 100%;
     font-size: larger;
 }
 
+.totalPrice {
+    font-weight: bold;
+    font-size: larger;
+}
 
-.cartHeader{
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr 1fr ;
-    margin: 0 1rem;
-    padding: 0 1rem;
-    justify-content: center;
-    text-align: center;
-    gap: 1rem;
-}
-.cartHeader > :first-child{
-    grid-column: 1 / 3;
-}
-.cartHeader > * {
+.cartHeader > th {
     font-family: 'BebasNeue', sans-serif;
     font-size: larger;
     border-bottom: solid var(--border) 3px;
-    text-transform: uppercase   ;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    padding: 0.5rem 1rem;
 }
 
 .emptyCart {
@@ -80,21 +108,32 @@
     background-color: var(--bg-btn-hover);
 }
 
-.cartPage {
-    background: linear-gradient(
-    135deg, 
-    var(--bg-secondary) 0%,
-    var(--bg-secondary) 10%,
-    var(--accent-primary) 50%,
-    var(--bg-secondary) 90%,
-    var(--bg-secondary) 100%
-);
-    background-size: 300% 300%;
-    animation: colorShift 30s ease-in-out infinite;
-}
-
 @keyframes colorShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
+
+
+/* tablette */
+@media (max-width: 1024px) {
+    .cart{
+        width: 100%;
+    }
+    .cartLayout {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        margin-bottom: 1rem;
+    }
+    .subtotalCart {
+        width: 100%;
+        position: relative;
+    }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+
 }

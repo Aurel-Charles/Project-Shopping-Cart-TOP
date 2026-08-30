@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap');
+
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('./assets/fonts/BebasNeue-Regular.woff2') format('woff2'),
+       url('./assets/fonts/BebasNeue-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 /* 1. Use a more-intuitive box-sizing model */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -53,54 +62,77 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
-@font-face {
-  font-family: 'BebasNeue';
-  src: url('./assets/fonts/BebasNeue-Regular.woff2') format('woff2'),
-       url('./assets/fonts/BebasNeue-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+
 
 :root {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f3f4f6;
-  --text-primary: #1a1a1a;
-  --text-secondary: #6b7280;
-  --accent-primary: #3b82f6;
-  --accent-secondary: #1d4ed8;
-  --danger: #ef4444;
-  --success: #22c55e;
-  --border: #e5e7eb;
-  --bg-btn: #3b82f6;
-  --bg-btn-hover: #1d4ed8;
-  --bg-btn-danger: #ef4444;
-  --bg-btn-danger-hover: #dc2626;
-  --text-btn: #ffffff;
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-
-  --nav-size: 12rem;
+    --bg-primary: #fdfdfb;
+    --bg-secondary: #efeeea;
+    --text-primary: #18181b;
+    --text-secondary: #6f6d66;
+    --accent-primary: #d94f22;
+    --accent-secondary: #a83714;
+    --danger: #8f1f1f;
+    --success: #2f6b46;
+    --border: #dedcd5;
+    --bg-btn: #18181b;
+    --bg-btn-hover: #d94f22;
+    --bg-btn-danger: #8f1f1f;
+    --bg-btn-danger-hover: #6d1616;
+    --text-btn: #fdfdfb;
+    --icon-color: var(--text-primary);
+    --icon-color-hover: var(--bg-primary);
+    --nav-size: 7rem;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --img-bg: white;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-primary: #1a1a1a;
-    --bg-secondary: #27272a;
-    --text-primary: #f9fafb;
-    --text-secondary: #9ca3af;
-    --accent-primary: #8ce9ef;
-    --accent-secondary: #459ca9;
-    --danger: #f87171;
-    --success: #87ca9f;
-    --border: #b0e0ec;
-    --bg-btn: #ceb872;
-    --bg-btn-hover: #3b82f6;
-    --bg-btn-danger: #f87171;
-    --bg-btn-danger-hover: #ef4444;
-    --text-btn: #1a1a1a;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  :root.dark {
+      --bg-primary: #141412;
+      --bg-secondary: #201f1c;
+      --text-primary: #f4f2ec;
+      --text-secondary: #a09d94;
+      --accent-primary: #ff7a4d;
+      --accent-secondary: #d9542a;
+      --danger: #ef8175;
+      --success: #74c096;
+      --border: #35342f;
+      --bg-btn: #ff7a4d;
+      --bg-btn-hover: #ffa07d;
+      --bg-btn-danger: #ef8175;
+      --bg-btn-danger-hover: #f5a096;
+      --text-btn: #141412;
+      --icon-color: var(--text-primary);
+      --icon-color-hover: var(--bg-primary);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
   }
+
+
+body {
+    color: var(--text-primary);
 }
 
-h1,h2,h3, a, button {
-  font-family: 'BebasNeue', sans-serif;
+
+* {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+    font-family: 'Work Sans', sans-serif;
 }
+
+h1, h2, h3, button {
+    font-family: 'BebasNeue', sans-serif;
+    text-transform: uppercase;
+}
+
+
+/* tablette */
+@media (max-width: 1024px) {
+  html {
+    font-size: 18px; /* défaut c'est 16px */
+}
+}
+
+/* mobile */
+@media (max-width: 768px) {
+
+}
+
+

@@ -6,7 +6,7 @@ export default  function Home() {
     return (
         <div className={style.homePage}>
             <p>"Add to cart, add to life."</p>
-            <p>free experiance!</p>
+            <p>free experience!</p>
             <Link to={"/shop"} > <Button label={"SHOP"}/> </Link>
         </div>
     )
