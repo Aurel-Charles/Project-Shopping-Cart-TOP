@@ -7,8 +7,8 @@ export default function ProductInCartCard({product, quantity, addItem, removeIte
         <tr className={style.cardRow}>
             <td className={style.productInfo}>
                 <img src={product.images[0]} alt={product.title} />
-                <p>{product.title}</p>
-                <p>{product.price}$ </p>
+                <p className={style.productTitle}>{product.title}</p>
+                <p className={style.unitPrice}>{product.price}$ </p>
             </td>
             <td>
                 <div className={style.quantityCta}>

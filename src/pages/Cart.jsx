@@ -67,7 +67,7 @@ export default function Cart() {
                             </tr>
                             <tr>
                                 <td><h4>Shipping:</h4></td>
-                                <td>{subTotalPrice >= 50? <h4>0$ (free) </h4> : <h4>{shipping}</h4>}</td>
+                                <td>{subTotalPrice >= 50? <h4>0$ (free) </h4> : <h4>{shipping}$</h4>}</td>
                             </tr>
                             <tr>
                                 <td><h3 className={style.totalText}>Total:</h3></td>

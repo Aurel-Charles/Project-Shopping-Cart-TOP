@@ -31,6 +31,17 @@
     border-radius: 8px;
 }
 
+/* The title is the only part allowed to give way when the row is narrow:
+   min-width lets it drop under its longest word, and the price keeps its
+   full width so it never breaks across two lines. */
+.productTitle {
+    min-width: 0;
+}
+
+.unitPrice {
+    flex-shrink: 0;
+}
+
 .quantityCta {
     display: flex;
     align-items: center;
@@ -49,4 +60,31 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .cardRow {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        grid-template-areas:
+            "info  info   info"
+            "qty   price  remove";
+        align-items: center;
+        gap: 0.75rem 1rem;
+        padding: 1rem 0;
+    }
+
+    .cardRow > td {
+        padding: 0;
+    }
+
+    .cardRow > td:nth-child(1) { grid-area: info; }
+    .cardRow > td:nth-child(2) { grid-area: qty; justify-self: start; }
+    .cardRow > td:nth-child(3) { grid-area: price; justify-self: end; }
+    .cardRow > td:nth-child(4) { grid-area: remove; justify-self: end; }
+
+    .cardRow > td:first-child img {
+        height: 4.5rem;
+        width: 4.5rem;
+    }
 }

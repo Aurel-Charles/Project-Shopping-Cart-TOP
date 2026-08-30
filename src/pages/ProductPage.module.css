@@ -1,5 +1,5 @@
 .productPage {
-    min-height: calc(100vh - var(--nav-size));
+    flex: 1;
     color: var(--text-primary);
     padding: 3rem;
 
