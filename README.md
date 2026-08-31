@@ -1,17 +1,66 @@
-# React + Vite
+# PixelCart 🛒
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> *"Add to cart, add to life."*
 
-Currently, two official plugins are available:
+A mock e-commerce shopping cart built with React — The Odin Project assignment.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## [Live Demo](https://project-shopping-cart-top.netlify.app/)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Browse products fetched from [DummyJSON API](https://dummyjson.com/products)
+- Filter products by category
+- Product detail page with image carousel
+- Add to cart with quantity control
+- Cart page with subtotal, shipping, and total
+- Real-time cart item counter in the navbar
+- Toast notifications on add to cart
+- Light / Dark mode toggle
+- Fully responsive (mobile, tablet, desktop)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# Project-Shopping-Cart-TOP
+
+## Tech Stack
+
+- **React** + **Vite**
+- **React Router** — client-side routing
+- **CSS Modules** — scoped component styles
+- **Lucide React** — icons
+- **Vitest** + **React Testing Library** — unit tests
+
+
+
+## Pages
+
+
+| Route          | Description                                |
+| -------------- | ------------------------------------------ |
+| `/`            | Home page                                  |
+| `/shop`        | Product listing with category filter       |
+| `/product/:id` | Product detail with carousel               |
+| `/cart`        | Cart with quantity management and checkout |
+
+
+
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+
+
+## Tests
+
+```bash
+npm test
+```
+
+
+
+
+
+Built as part of [The Odin Project](https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart) — Full Stack JavaScript curriculum. 
+

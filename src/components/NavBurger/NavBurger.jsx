@@ -11,7 +11,6 @@ export default function NavBurger({cart, className}) {
         isOpen ? setIsOpen(false) : setIsOpen(true)
     }
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0)
-    console.log(isOpen);
     
     return (
         <div className={className}>

@@ -4,7 +4,6 @@ import { Link, useLocation } from "react-router";
 
 
 export default function Toast({toasts}) {
-    console.log(toasts);
     const location = useLocation()
     
     if (location.pathname === '/cart') return null

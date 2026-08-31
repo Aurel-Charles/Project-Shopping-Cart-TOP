@@ -9,7 +9,6 @@ export default function Shop() {
     const [selectedCategory , setSelectedCategory] = useState(null)
 
     const selectProduct = selectedCategory ? data.filter((product) => product.category === selectedCategory) : data
-    console.log(selectedCategory);
 
     
     function handleCategory(value) {
