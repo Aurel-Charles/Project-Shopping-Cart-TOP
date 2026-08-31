@@ -4,6 +4,7 @@ import { useState } from "react"
 import { addItemUtil, removeItemUtil } from "./utils/cartUtils"
 import useProduct from "./hooks/useProduct"
 import Toast from "./components/Toast/Toast"
+import useCategory from "./hooks/useCategory"
 
 function App() {
   const [theme, setTheme] = useState('light')
@@ -37,12 +38,13 @@ function App() {
 
   
   const {data, loading, error} = useProduct()
+  const { data: category, loading: loadingCategory, error: errorCategory } = useCategory()
   
   return (
     <>
     <Navbar cart={cart} toggleTheme={toggleTheme} theme={theme} />
     <Toast toasts={toasts}/>
-    <Outlet context={{cart, addItem , removeItem , data, loading, error}} />
+    <Outlet context={{cart, addItem , removeItem , data, loading, error, category, loadingCategory, errorCategory}} />
     </>
   )
 }

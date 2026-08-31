@@ -19,7 +19,9 @@ export default function NavBurger({cart, className}) {
         {isOpen ? 
             <nav className={style.burgerNav}>
                 <NavLink onClick={handleOpen} to="/"> Home </NavLink>
+                <hr />
                 <NavLink onClick={handleOpen} to="/shop"> Shop </NavLink>
+                <hr />
                 <div className={style.cartMenuBurger}>
                     <NavLink onClick={handleOpen} to="/cart"> Cart </NavLink>
                     {totalItems === 0 ? null : <div> {totalItems} </div>}

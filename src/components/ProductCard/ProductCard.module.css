@@ -64,6 +64,11 @@
     flex-grow: 1;
 }
 
+.priceProduct{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--text-primary);
+}
 .productCta {
     margin-top: auto;
     font-family: 'BebasNeue', sans-serif;

@@ -74,3 +74,9 @@
 .burger svg {
     stroke: var(--text-primary) !important;
 }
+
+
+.active {
+    background-color: var(--accent-primary);
+    color: var(--text-btn);
+}
