@@ -5,7 +5,7 @@ import Button from "../components/Button/Button"
 import { useState } from "react"
 
 export default function Shop() {
-    const { addItem, data, loading, error, category, loadingCategory, errorCategory } = useOutletContext()
+    const { addItem, data, loading, error, category } = useOutletContext()
     const [selectedCategory , setSelectedCategory] = useState(null)
 
     const selectProduct = selectedCategory ? data.filter((product) => product.category === selectedCategory) : data
