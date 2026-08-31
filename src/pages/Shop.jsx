@@ -1,11 +1,11 @@
-import { useOutletContext } from "react-router"
 import ProductCard from "../components/ProductCard/ProductCard"
 import style from './Shop.module.css' 
 import Button from "../components/Button/Button"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { ShopContext } from "../ShopContext"
 
 export default function Shop() {
-    const { addItem, data, loading, error, category } = useOutletContext()
+    const { data, loading, error, category } = useContext(ShopContext)
     const [selectedCategory , setSelectedCategory] = useState(null)
 
     const selectProduct = selectedCategory ? data.filter((product) => product.category === selectedCategory) : data
@@ -43,7 +43,7 @@ export default function Shop() {
             {error && <p> {error} </p> }
             {selectProduct && <div className={style.productsContainer}>
                 {selectProduct.map((product) => (
-                    <ProductCard key={product.id} product={product} addItem={addItem} />
+                    <ProductCard key={product.id} product={product} />
                 ))}
             </div> }
 

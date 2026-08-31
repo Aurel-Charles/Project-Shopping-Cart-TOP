@@ -2,13 +2,16 @@ import { NavLink } from "react-router";
 import  style  from "./Navbar.module.css";
 import { Moon, ShoppingCart, Sun, ToggleLeft, ToggleRight } from "lucide-react";
 import NavBurger from "../NavBurger/NavBurger";
+import { useContext } from "react";
+import { ShopContext } from "../../ShopContext";
 
-export default function Navbar({cart, toggleTheme, theme}) {
+export default function Navbar({toggleTheme, theme}) {
+    const {cart = []} = useContext(ShopContext)
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0)
     return (
         <nav className={style.navbar}>
             <h1>PixelCart</h1>
-            <NavBurger className={style.burgerMenu} cart={cart}/>
+            <NavBurger className={style.burgerMenu} cart={cart} theme={theme} toggleTheme={toggleTheme}/>
             <div className={style.navLink}>
                 <NavLink to="/"> Home </NavLink>
                 <NavLink to="/shop"> Shop </NavLink>

@@ -1,13 +1,14 @@
-    import { Link, useOutletContext, useParams } from "react-router"
+    import { Link, useParams } from "react-router"
     import Button from "../components/Button/Button";
-    import { useState } from "react";
+    import { useContext, useState } from "react";
     import style from './ProductPage.module.css'
     import { CircleMinus, CirclePlus } from "lucide-react";
     import Carousel from "../components/Caroussel/Caroussel";
+import { ShopContext } from "../ShopContext";
 
     export default function ProductPage() {
         const { id } = useParams()
-        const { addItem, data, loading, error } = useOutletContext()
+        const { addItem, data, loading, error } = useContext(ShopContext)
         const product = data.find( (p) => p.id === Number(id) )
         const [quantity, setQuantity] = useState(1)
 

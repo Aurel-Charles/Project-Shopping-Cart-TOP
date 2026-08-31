@@ -1,0 +1,30 @@
+.banner {
+    background-color: var(--accent-primary);
+    color: var(--text-btn);
+    padding: 0.75rem 0;
+    font-family: 'BebasNeue', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.bannerInner {
+    display: flex;
+    gap: 4rem;
+    width: max-content;
+    animation: marquee 15s linear infinite;
+}
+
+.bannerInner > span{
+    width: 50vw;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-25%); }
+}

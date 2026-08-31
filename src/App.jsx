@@ -1,10 +1,11 @@
 import { Outlet } from "react-router"
 import Navbar from "./components/NavBar/Navbar"
-import { useState } from "react"
-import { addItemUtil, removeItemUtil } from "./utils/cartUtils"
+import { useReducer, useState } from "react"
+import cartReducer from "./reducers/cartReducer"
 import useProduct from "./hooks/useProduct"
 import Toast from "./components/Toast/Toast"
 import useCategory from "./hooks/useCategory"
+import { ShopContext } from "./ShopContext"
 
 function App() {
   const [theme, setTheme] = useState('light')
@@ -15,8 +16,8 @@ function App() {
       document.documentElement.classList.toggle('dark')
   }
 
-  const [cart, setCart] = useState([])
   const [toasts, setToasts] = useState([])
+
 
   function addToast(product, quantity) {
       const tempId = Date.now()
@@ -26,29 +27,47 @@ function App() {
       }, 3000)
   }
 
+
+  const [cart, dispatch] = useReducer(cartReducer, [])
+
   function addItem(id, quantity) {
-     setCart(addItemUtil(id, quantity , cart))
-     const product = data.find(item => item.id === id)
-     addToast(product, quantity)
+      dispatch({ type: 'ADD_ITEM', id, quantity })
+      const product = data.find(item => item.id === id)
+      addToast(product, quantity)
   }
 
   function removeItem(id, all=false) {
-    setCart(removeItemUtil(id, cart, all))
+      dispatch({ type: 'REMOVE_ITEM', id, all })
   }
 
   function emptyCart() {
-    setCart([])
+      dispatch({ type: 'EMPTY_CART' })
   }
 
-  
   const {data, loading, error} = useProduct()
   const { data: category, loading: loadingCategory, error: errorCategory } = useCategory()
+
+
   
   return (
     <>
-    <Navbar cart={cart} toggleTheme={toggleTheme} theme={theme} />
-    <Toast toasts={toasts}/>
-    <Outlet context={{cart, addItem , removeItem , data, loading, error, category, loadingCategory, errorCategory, emptyCart}} />
+    <ShopContext value={{
+        data, 
+        loading, 
+        error, 
+        category,  
+        loadingCategory, 
+        errorCategory,
+        cart,
+        addItem,
+        removeItem,
+        emptyCart
+    }}>
+      <Navbar toggleTheme={toggleTheme} theme={theme} />
+      <Toast toasts={toasts}/>
+      <Outlet/>
+      {/* <Outlet context={{cart, addItem , removeItem , data, loading, error, category, loadingCategory, errorCategory, emptyCart}} /> */}
+    </ShopContext>
     </>
   )
 }

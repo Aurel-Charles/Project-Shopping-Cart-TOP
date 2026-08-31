@@ -1,8 +1,11 @@
 import style from './ProductInCartCard.module.css'
 import Button from '../Button/Button'
 import { CircleMinus, CirclePlus, Trash2 } from 'lucide-react'
+import { useContext } from 'react'
+import { ShopContext } from '../../ShopContext'
 
-export default function ProductInCartCard({product, quantity, addItem, removeItem}) {
+export default function ProductInCartCard({product, quantity}) {
+    const {addItem, removeItem} = useContext(ShopContext)
     return (
         <tr className={style.cardRow}>
             <td className={style.productInfo}>

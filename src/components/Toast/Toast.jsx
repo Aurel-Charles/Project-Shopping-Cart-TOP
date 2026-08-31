@@ -6,7 +6,7 @@ import { Link, useLocation } from "react-router";
 export default function Toast({toasts}) {
     const location = useLocation()
     
-    if (location.pathname === '/cart') return null
+    if (location.pathname === '/cart' || location.pathname === '/rick') return null
     
     return (
         <div className={style.toastContainer}>

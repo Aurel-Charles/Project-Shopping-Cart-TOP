@@ -1,11 +1,13 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import style from './ProductCard.module.css'
 import Button from '../Button/Button'
 import { CircleMinus, CirclePlus } from 'lucide-react'
 import { Link } from 'react-router'
+import { ShopContext } from '../../ShopContext'
 
 
-export default function ProductCard({product, addItem, inCart=false}) {
+export default function ProductCard({product, inCart=false}) {
+    const {addItem} = useContext(ShopContext)
     const [quantity, setQuantity] = useState(1)
 
     return (

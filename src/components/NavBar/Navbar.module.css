@@ -11,9 +11,6 @@
     color: var(--accent-primary);
     font-size: 3rem;
     line-height: 1;
-    /* BebasNeue: ascent .9 / descent .3 / capHeight .7 em. The descender space
-       is never used by an all-caps face, so the glyphs render (.9-.3-.7)/2 =
-       .05em above the box center. Nudged back down without affecting layout. */
     transform: translateY(0.05em);
 }
 

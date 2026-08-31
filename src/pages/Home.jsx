@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import Button from "../components/Button/Button";
 import style from "./Home.module.css"
+import Banner from "../components/Banner/Banner";
 
 export default  function Home() {
     return (
@@ -8,6 +9,7 @@ export default  function Home() {
             <p>"Add to cart, add to life."</p>
             <p>free experience!</p>
             <Link to={"/shop"} > <Button label={"SHOP"}/> </Link>
+            <Banner/>
         </div>
     )
 }

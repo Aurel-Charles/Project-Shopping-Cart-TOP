@@ -1,12 +1,13 @@
-import { useOutletContext } from "react-router"
 import { Link } from "react-router";
 import style from './Cart.module.css'
 import ProductInCartCard from "../components/ProductInCartCard/ProductInCartCard";
 import Button from "../components/Button/Button";
 import { Package, Truck } from "lucide-react";
+import { useContext } from "react";
+import { ShopContext } from "../ShopContext";
 
 export default function Cart() {
-    const { cart, addItem, removeItem,data, loading, error, emptyCart} = useOutletContext()
+    const { cart,data, loading, error, emptyCart} = useContext(ShopContext)
     if (loading || !data.length) return <p>...loading</p>
 
     const itemsInCart = cart.map(item => ({
@@ -51,9 +52,7 @@ export default function Cart() {
                                 <ProductInCartCard 
                                     key={item.product.id} 
                                     product={item.product} 
-                                    addItem={addItem} 
                                     quantity={item.quantity} 
-                                    removeItem={removeItem} 
                                 />
                             ))}
                         </tbody>
