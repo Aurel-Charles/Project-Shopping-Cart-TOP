@@ -1,0 +1,185 @@
+.rickPage {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3rem 1rem;
+    background: linear-gradient(
+        135deg,
+        var(--bg-secondary) 0%,
+        var(--bg-secondary) 10%,
+        color-mix(in oklab, var(--accent-primary) 18%, var(--bg-secondary)) 50%,
+        var(--bg-secondary) 90%,
+        var(--bg-secondary) 100%
+    );
+    background-size: 300% 300%;
+    animation: colorShift 20s ease-in-out infinite;
+}
+
+@keyframes colorShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* The shadow lives on the wrapper: the mask below clips the receipt's own
+   box-shadow away, while drop-shadow follows the torn silhouette instead. */
+.receiptWrap {
+    width: min(34rem, 100%);
+    filter: drop-shadow(0 12px 28px rgb(0 0 0 / 0.2));
+    animation: printOut 0.5s ease-out both;
+}
+
+@keyframes printOut {
+    from { transform: translateY(-1.5rem); opacity: 0; }
+    to { transform: none; opacity: 1; }
+}
+
+.receipt {
+    --tooth: 12px;
+    position: relative;
+    background-color: var(--bg-primary);
+    padding:  3.75rem;
+}
+
+.brand {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.headline {
+    font-size: 2.75rem;
+    line-height: 1;
+    text-align: center;
+    color: var(--accent-primary);
+    margin-top: 0.5rem;
+    /* BebasNeue renders .05em above its box center, same nudge as the navbar. */
+    transform: translateY(0.05em);
+}
+
+.lede {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+.stamp {
+    position: absolute;
+    top: 3.5rem;
+    right: 1rem;
+    padding: 0.1rem 0.75rem;
+    font-family: "BebasNeue", sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--success);
+    border: 3px double var(--success);
+    border-radius: 3px;
+    opacity: 0.7;
+    transform: rotate(-14deg);
+}
+
+.meta {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.metaRow {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.metaRow dt {
+    flex-shrink: 0;
+    letter-spacing: 0.08em;
+}
+
+.metaRow dd {
+    flex: 1;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    color: var(--text-primary);
+}
+
+.metaRow dd::before {
+    content: "";
+    flex: 1;
+    border-bottom: 1px dotted var(--border);
+    transform: translateY(-0.25em);
+}
+
+.videoFrame {
+    border: 1px solid var(--border);
+    background-color: var(--bg-secondary);
+    padding: 0.5rem;
+}
+
+.rickIframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+}
+
+.caption {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-top: 0.6rem;
+}
+
+.backLink {
+    display: block;
+    margin-top: 2rem;
+    text-decoration: none;
+}
+
+.backLink button {
+    width: 100%;
+}
+
+.backLink:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    .rickPage {
+        padding: 1.5rem 1rem;
+    }
+
+    .receipt {
+        padding: calc(var(--tooth) + 1.5rem) 1.25rem;
+    }
+
+    .headline {
+        font-size: 2rem;
+    }
+
+    .stamp {
+        top: 2.75rem;
+        font-size: 1.15rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rickPage,
+    .receiptWrap {
+        animation: none;
+    }
+}

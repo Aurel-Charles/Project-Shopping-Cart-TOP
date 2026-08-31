@@ -6,7 +6,7 @@ import Button from "../components/Button/Button";
 import { Package, Truck } from "lucide-react";
 
 export default function Cart() {
-    const { cart, addItem, removeItem,data, loading, error } = useOutletContext()
+    const { cart, addItem, removeItem,data, loading, error, emptyCart} = useOutletContext()
     if (loading || !data.length) return <p>...loading</p>
 
     const itemsInCart = cart.map(item => ({
@@ -16,7 +16,7 @@ export default function Cart() {
 
     const shipping = 15
     const subTotalPrice = itemsInCart.reduce((total, item) => total + (item.quantity * item.product.price), 0)
-    console.log(subTotalPrice);
+
     return(
         <div className={style.cartPage}>
             <h1>Your Cart</h1>
@@ -74,7 +74,7 @@ export default function Cart() {
                                 <td className={style.totalPrice}>{(subTotalPrice+shipping).toFixed(2)} $</td>
                             </tr>
                             <tr>
-                                <td colSpan={2}><Button label={"Checkout"}/></td>
+                                <td colSpan={2}> <Link to="/rick"><Button onClick={ () => emptyCart()} label={"Checkout"}/> </Link></td>
                             </tr>
                         </tbody>
                     </table>

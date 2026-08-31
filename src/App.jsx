@@ -36,6 +36,10 @@ function App() {
     setCart(removeItemUtil(id, cart, all))
   }
 
+  function emptyCart() {
+    setCart([])
+  }
+
   
   const {data, loading, error} = useProduct()
   const { data: category, loading: loadingCategory, error: errorCategory } = useCategory()
@@ -44,7 +48,7 @@ function App() {
     <>
     <Navbar cart={cart} toggleTheme={toggleTheme} theme={theme} />
     <Toast toasts={toasts}/>
-    <Outlet context={{cart, addItem , removeItem , data, loading, error, category, loadingCategory, errorCategory}} />
+    <Outlet context={{cart, addItem , removeItem , data, loading, error, category, loadingCategory, errorCategory, emptyCart}} />
     </>
   )
 }
