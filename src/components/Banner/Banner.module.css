@@ -14,7 +14,6 @@
 }
 
 .bannerInner {
-    display: flex;
     gap: 4rem;
     width: max-content;
     animation: marquee 15s linear infinite;
